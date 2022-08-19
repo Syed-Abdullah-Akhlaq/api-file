@@ -13,10 +13,7 @@ def Students_api(request):
     print("--------",request)
     print("========",request.body)
     if request.method == 'GET':
-
         json_data = request.body
-        # print(request.body)  
-        # json_data ={'name':'wajahat'}
         stream = io.BytesIO(json_data)
         print(stream)
         pythondata = JSONParser().parse(stream)
@@ -51,7 +48,6 @@ def Students_api(request):
 
 
     if request.method == 'PUT':
-        print("helllllllllllllllllll")
         json_data = request.body
         stream = io.BytesIO(json_data)
         pythondata = JSONParser().parse(stream)
